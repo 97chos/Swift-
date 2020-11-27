@@ -1,0 +1,360 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF65A3A42570BFD50034CB8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF65A3A32570BFD50034CB8C /* AppDelegate.swift */; };
+		FF65A3A62570BFD50034CB8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF65A3A52570BFD50034CB8C /* SceneDelegate.swift */; };
+		FF65A3A82570BFD50034CB8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF65A3A72570BFD50034CB8C /* ViewController.swift */; };
+		FF65A3AB2570BFD60034CB8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF65A3A92570BFD60034CB8C /* Main.storyboard */; };
+		FF65A3AD2570BFD80034CB8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF65A3AC2570BFD80034CB8C /* Assets.xcassets */; };
+		FF65A3B02570BFD80034CB8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF65A3AE2570BFD80034CB8C /* LaunchScreen.storyboard */; };
+		FF65A3B92570CBF00034CB8C /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF65A3B82570CBF00034CB8C /* ReadViewController.swift */; };
+		FF65A3BE2570D0010034CB8C /* THEletssmileL.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF65A3BD2570CFA80034CB8C /* THEletssmileL.otf */; };
+		FF65A3BF2570D0010034CB8C /* THEletssmileM.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF65A3BB2570CFA80034CB8C /* THEletssmileM.otf */; };
+		FF65A3C02570D0010034CB8C /* THEletssmileR.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF65A3BC2570CFA80034CB8C /* THEletssmileR.otf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FF65A3A02570BFD50034CB8C /* InputForm no SB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InputForm no SB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF65A3A32570BFD50034CB8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FF65A3A52570BFD50034CB8C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FF65A3A72570BFD50034CB8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FF65A3AA2570BFD60034CB8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FF65A3AC2570BFD80034CB8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF65A3AF2570BFD80034CB8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF65A3B12570BFD80034CB8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF65A3B82570CBF00034CB8C /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
+		FF65A3BB2570CFA80034CB8C /* THEletssmileM.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = THEletssmileM.otf; sourceTree = "<group>"; };
+		FF65A3BC2570CFA80034CB8C /* THEletssmileR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = THEletssmileR.otf; sourceTree = "<group>"; };
+		FF65A3BD2570CFA80034CB8C /* THEletssmileL.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = THEletssmileL.otf; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF65A39D2570BFD50034CB8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF65A3972570BFD50034CB8C = {
+			isa = PBXGroup;
+			children = (
+				FF65A3A22570BFD50034CB8C /* InputForm no SB */,
+				FF65A3A12570BFD50034CB8C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF65A3A12570BFD50034CB8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF65A3A02570BFD50034CB8C /* InputForm no SB.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF65A3A22570BFD50034CB8C /* InputForm no SB */ = {
+			isa = PBXGroup;
+			children = (
+				FF65A3BD2570CFA80034CB8C /* THEletssmileL.otf */,
+				FF65A3BB2570CFA80034CB8C /* THEletssmileM.otf */,
+				FF65A3BC2570CFA80034CB8C /* THEletssmileR.otf */,
+				FF65A3A32570BFD50034CB8C /* AppDelegate.swift */,
+				FF65A3A52570BFD50034CB8C /* SceneDelegate.swift */,
+				FF65A3A72570BFD50034CB8C /* ViewController.swift */,
+				FF65A3B82570CBF00034CB8C /* ReadViewController.swift */,
+				FF65A3A92570BFD60034CB8C /* Main.storyboard */,
+				FF65A3AC2570BFD80034CB8C /* Assets.xcassets */,
+				FF65A3AE2570BFD80034CB8C /* LaunchScreen.storyboard */,
+				FF65A3B12570BFD80034CB8C /* Info.plist */,
+			);
+			path = "InputForm no SB";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF65A39F2570BFD50034CB8C /* InputForm no SB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF65A3B42570BFD80034CB8C /* Build configuration list for PBXNativeTarget "InputForm no SB" */;
+			buildPhases = (
+				FF65A39C2570BFD50034CB8C /* Sources */,
+				FF65A39D2570BFD50034CB8C /* Frameworks */,
+				FF65A39E2570BFD50034CB8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "InputForm no SB";
+			productName = "InputForm no SB";
+			productReference = FF65A3A02570BFD50034CB8C /* InputForm no SB.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF65A3982570BFD50034CB8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					FF65A39F2570BFD50034CB8C = {
+						CreatedOnToolsVersion = 12.1;
+					};
+				};
+			};
+			buildConfigurationList = FF65A39B2570BFD50034CB8C /* Build configuration list for PBXProject "InputForm no SB" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF65A3972570BFD50034CB8C;
+			productRefGroup = FF65A3A12570BFD50034CB8C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF65A39F2570BFD50034CB8C /* InputForm no SB */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF65A39E2570BFD50034CB8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF65A3BE2570D0010034CB8C /* THEletssmileL.otf in Resources */,
+				FF65A3BF2570D0010034CB8C /* THEletssmileM.otf in Resources */,
+				FF65A3C02570D0010034CB8C /* THEletssmileR.otf in Resources */,
+				FF65A3B02570BFD80034CB8C /* LaunchScreen.storyboard in Resources */,
+				FF65A3AD2570BFD80034CB8C /* Assets.xcassets in Resources */,
+				FF65A3AB2570BFD60034CB8C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF65A39C2570BFD50034CB8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF65A3A82570BFD50034CB8C /* ViewController.swift in Sources */,
+				FF65A3A42570BFD50034CB8C /* AppDelegate.swift in Sources */,
+				FF65A3B92570CBF00034CB8C /* ReadViewController.swift in Sources */,
+				FF65A3A62570BFD50034CB8C /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FF65A3A92570BFD60034CB8C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF65A3AA2570BFD60034CB8C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FF65A3AE2570BFD80034CB8C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF65A3AF2570BFD80034CB8C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF65A3B22570BFD80034CB8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF65A3B32570BFD80034CB8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF65A3B52570BFD80034CB8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "InputForm no SB/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "selfProject.InputForm-no-SB";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF65A3B62570BFD80034CB8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "InputForm no SB/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "selfProject.InputForm-no-SB";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF65A39B2570BFD50034CB8C /* Build configuration list for PBXProject "InputForm no SB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF65A3B22570BFD80034CB8C /* Debug */,
+				FF65A3B32570BFD80034CB8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF65A3B42570BFD80034CB8C /* Build configuration list for PBXNativeTarget "InputForm no SB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF65A3B52570BFD80034CB8C /* Debug */,
+				FF65A3B62570BFD80034CB8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF65A3982570BFD50034CB8C /* Project object */;
+}
