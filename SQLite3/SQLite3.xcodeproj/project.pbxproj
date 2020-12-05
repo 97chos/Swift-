@@ -14,6 +14,7 @@
 		FFDDC111257B7F0F00162835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDDC110257B7F0F00162835 /* Assets.xcassets */; };
 		FFDDC114257B7F0F00162835 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDDC112257B7F0F00162835 /* LaunchScreen.storyboard */; };
 		FFDDC11E257B7F8B00162835 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDDC11D257B7F8B00162835 /* libsqlite3.tbd */; };
+		FFDDC12B257BE97D00162835 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FFDDC12A257BE97D00162835 /* db.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FFDDC11D257B7F8B00162835 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		FFDDC120257B7FCA00162835 /* SQLite3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SQLite3-Bridging-Header.h"; sourceTree = "<group>"; };
 		FFDDC125257BCA0A00162835 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		FFDDC12A257BE97D00162835 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = db.sqlite; path = ../../../Database/db.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		FFDDC106257B7F0400162835 /* SQLite3 */ = {
 			isa = PBXGroup;
 			children = (
+				FFDDC12A257BE97D00162835 /* db.sqlite */,
 				FFDDC107257B7F0400162835 /* AppDelegate.swift */,
 				FFDDC109257B7F0400162835 /* SceneDelegate.swift */,
 				FFDDC10B257B7F0400162835 /* ViewController.swift */,
@@ -143,6 +146,7 @@
 				FFDDC114257B7F0F00162835 /* LaunchScreen.storyboard in Resources */,
 				FFDDC111257B7F0F00162835 /* Assets.xcassets in Resources */,
 				FFDDC10F257B7F0400162835 /* Main.storyboard in Resources */,
+				FFDDC12B257BE97D00162835 /* db.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +242,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OBJC_BRIDGING_HEADER = "SQLite3-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SQLite3/SQLite3-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -293,7 +297,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OBJC_BRIDGING_HEADER = "SQLite3-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SQLite3/SQLite3-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
