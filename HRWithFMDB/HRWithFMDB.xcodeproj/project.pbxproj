@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF6F3FB1257D199100D96897 /* hr.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FF6F3FB0257D199100D96897 /* hr.sqlite */; };
+		FF6F3FB4257D1B0E00D96897 /* DepartmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F3FB3257D1B0E00D96897 /* DepartmentDAO.swift */; };
+		FFDDC142257CB0B300162835 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDC141257CB0B300162835 /* AppDelegate.swift */; };
+		FFDDC144257CB0B400162835 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDC143257CB0B400162835 /* SceneDelegate.swift */; };
+		FFDDC146257CB0B400162835 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDC145257CB0B400162835 /* ViewController.swift */; };
+		FFDDC149257CB0B400162835 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDDC147257CB0B400162835 /* Main.storyboard */; };
+		FFDDC14B257CB0B600162835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDDC14A257CB0B600162835 /* Assets.xcassets */; };
+		FFDDC14E257CB0B600162835 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDDC14C257CB0B600162835 /* LaunchScreen.storyboard */; };
+		FFDDC158257CB10900162835 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDDC157257CB10900162835 /* libsqlite3.tbd */; };
+		FFDDC167257CB16900162835 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDDC160257CB16800162835 /* FMDatabaseAdditions.m */; };
+		FFDDC168257CB16900162835 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDDC161257CB16800162835 /* FMDatabase.m */; };
+		FFDDC169257CB16900162835 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDDC163257CB16800162835 /* FMDatabaseQueue.m */; };
+		FFDDC16A257CB16900162835 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDDC164257CB16800162835 /* FMResultSet.m */; };
+		FFDDC16B257CB16900162835 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDDC166257CB16900162835 /* FMDatabasePool.m */; };
+		FFDDC16E257CB3A800162835 /* DepartmentListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDC16D257CB3A800162835 /* DepartmentListVC.swift */; };
+		FFDDC171257CB3B300162835 /* EmployeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDC170257CB3B300162835 /* EmployeeListVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FF6F3FB0257D199100D96897 /* hr.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = hr.sqlite; path = ../../../Database/hr.sqlite; sourceTree = "<group>"; };
+		FF6F3FB3257D1B0E00D96897 /* DepartmentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentDAO.swift; sourceTree = "<group>"; };
+		FFDDC13E257CB0B300162835 /* HRWithFMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRWithFMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDDC141257CB0B300162835 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FFDDC143257CB0B400162835 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FFDDC145257CB0B400162835 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FFDDC148257CB0B400162835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FFDDC14A257CB0B600162835 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFDDC14D257CB0B600162835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FFDDC14F257CB0B700162835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFDDC157257CB10900162835 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		FFDDC15B257CB16700162835 /* HRWithFMDB-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HRWithFMDB-Bridging-Header.h"; sourceTree = "<group>"; };
+		FFDDC15C257CB16800162835 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = "../../../../Downloads/fmdb-master/src/fmdb/FMDatabase.h"; sourceTree = "<group>"; };
+		FFDDC15D257CB16800162835 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = "../../../../Downloads/fmdb-master/src/fmdb/FMDatabaseAdditions.h"; sourceTree = "<group>"; };
+		FFDDC15E257CB16800162835 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = "../../../../Downloads/fmdb-master/src/fmdb/FMDatabasePool.h"; sourceTree = "<group>"; };
+		FFDDC15F257CB16800162835 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = "../../../../Downloads/fmdb-master/src/fmdb/FMResultSet.h"; sourceTree = "<group>"; };
+		FFDDC160257CB16800162835 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = "../../../../Downloads/fmdb-master/src/fmdb/FMDatabaseAdditions.m"; sourceTree = "<group>"; };
+		FFDDC161257CB16800162835 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = "../../../../Downloads/fmdb-master/src/fmdb/FMDatabase.m"; sourceTree = "<group>"; };
+		FFDDC162257CB16800162835 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = "../../../../Downloads/fmdb-master/src/fmdb/FMDatabaseQueue.h"; sourceTree = "<group>"; };
+		FFDDC163257CB16800162835 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = "../../../../Downloads/fmdb-master/src/fmdb/FMDatabaseQueue.m"; sourceTree = "<group>"; };
+		FFDDC164257CB16800162835 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = "../../../../Downloads/fmdb-master/src/fmdb/FMResultSet.m"; sourceTree = "<group>"; };
+		FFDDC165257CB16900162835 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = "../../../../Downloads/fmdb-master/src/fmdb/FMDB.h"; sourceTree = "<group>"; };
+		FFDDC166257CB16900162835 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = "../../../../Downloads/fmdb-master/src/fmdb/FMDatabasePool.m"; sourceTree = "<group>"; };
+		FFDDC16D257CB3A800162835 /* DepartmentListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListVC.swift; sourceTree = "<group>"; };
+		FFDDC170257CB3B300162835 /* EmployeeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFDDC13B257CB0B300162835 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFDDC158257CB10900162835 /* libsqlite3.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFDDC135257CB0B300162835 = {
+			isa = PBXGroup;
+			children = (
+				FFDDC15A257CB15C00162835 /* fmdb */,
+				FFDDC140257CB0B300162835 /* HRWithFMDB */,
+				FFDDC13F257CB0B300162835 /* Products */,
+				FFDDC156257CB10900162835 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FFDDC13F257CB0B300162835 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFDDC13E257CB0B300162835 /* HRWithFMDB.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFDDC140257CB0B300162835 /* HRWithFMDB */ = {
+			isa = PBXGroup;
+			children = (
+				FF6F3FB0257D199100D96897 /* hr.sqlite */,
+				FFDDC141257CB0B300162835 /* AppDelegate.swift */,
+				FFDDC143257CB0B400162835 /* SceneDelegate.swift */,
+				FFDDC145257CB0B400162835 /* ViewController.swift */,
+				FFDDC147257CB0B400162835 /* Main.storyboard */,
+				FFDDC16D257CB3A800162835 /* DepartmentListVC.swift */,
+				FFDDC170257CB3B300162835 /* EmployeeListVC.swift */,
+				FF6F3FB3257D1B0E00D96897 /* DepartmentDAO.swift */,
+				FFDDC14A257CB0B600162835 /* Assets.xcassets */,
+				FFDDC14C257CB0B600162835 /* LaunchScreen.storyboard */,
+				FFDDC14F257CB0B700162835 /* Info.plist */,
+			);
+			path = HRWithFMDB;
+			sourceTree = "<group>";
+		};
+		FFDDC156257CB10900162835 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFDDC157257CB10900162835 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFDDC15A257CB15C00162835 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				FFDDC15C257CB16800162835 /* FMDatabase.h */,
+				FFDDC161257CB16800162835 /* FMDatabase.m */,
+				FFDDC15D257CB16800162835 /* FMDatabaseAdditions.h */,
+				FFDDC160257CB16800162835 /* FMDatabaseAdditions.m */,
+				FFDDC15E257CB16800162835 /* FMDatabasePool.h */,
+				FFDDC166257CB16900162835 /* FMDatabasePool.m */,
+				FFDDC162257CB16800162835 /* FMDatabaseQueue.h */,
+				FFDDC163257CB16800162835 /* FMDatabaseQueue.m */,
+				FFDDC165257CB16900162835 /* FMDB.h */,
+				FFDDC15F257CB16800162835 /* FMResultSet.h */,
+				FFDDC164257CB16800162835 /* FMResultSet.m */,
+				FFDDC15B257CB16700162835 /* HRWithFMDB-Bridging-Header.h */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFDDC13D257CB0B300162835 /* HRWithFMDB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFDDC152257CB0B700162835 /* Build configuration list for PBXNativeTarget "HRWithFMDB" */;
+			buildPhases = (
+				FFDDC13A257CB0B300162835 /* Sources */,
+				FFDDC13B257CB0B300162835 /* Frameworks */,
+				FFDDC13C257CB0B300162835 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HRWithFMDB;
+			productName = HRWithFMDB;
+			productReference = FFDDC13E257CB0B300162835 /* HRWithFMDB.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFDDC136257CB0B300162835 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					FFDDC13D257CB0B300162835 = {
+						CreatedOnToolsVersion = 12.1;
+						LastSwiftMigration = 1210;
+					};
+				};
+			};
+			buildConfigurationList = FFDDC139257CB0B300162835 /* Build configuration list for PBXProject "HRWithFMDB" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFDDC135257CB0B300162835;
+			productRefGroup = FFDDC13F257CB0B300162835 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFDDC13D257CB0B300162835 /* HRWithFMDB */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFDDC13C257CB0B300162835 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFDDC14E257CB0B600162835 /* LaunchScreen.storyboard in Resources */,
+				FFDDC14B257CB0B600162835 /* Assets.xcassets in Resources */,
+				FFDDC149257CB0B400162835 /* Main.storyboard in Resources */,
+				FF6F3FB1257D199100D96897 /* hr.sqlite in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFDDC13A257CB0B300162835 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFDDC146257CB0B400162835 /* ViewController.swift in Sources */,
+				FFDDC16E257CB3A800162835 /* DepartmentListVC.swift in Sources */,
+				FF6F3FB4257D1B0E00D96897 /* DepartmentDAO.swift in Sources */,
+				FFDDC171257CB3B300162835 /* EmployeeListVC.swift in Sources */,
+				FFDDC142257CB0B300162835 /* AppDelegate.swift in Sources */,
+				FFDDC16A257CB16900162835 /* FMResultSet.m in Sources */,
+				FFDDC144257CB0B400162835 /* SceneDelegate.swift in Sources */,
+				FFDDC168257CB16900162835 /* FMDatabase.m in Sources */,
+				FFDDC16B257CB16900162835 /* FMDatabasePool.m in Sources */,
+				FFDDC167257CB16900162835 /* FMDatabaseAdditions.m in Sources */,
+				FFDDC169257CB16900162835 /* FMDatabaseQueue.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FFDDC147257CB0B400162835 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFDDC148257CB0B400162835 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FFDDC14C257CB0B600162835 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFDDC14D257CB0B600162835 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FFDDC150257CB0B700162835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "fmdb/HRWithFMDB-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FFDDC151257CB0B700162835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "fmdb/HRWithFMDB-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFDDC153257CB0B700162835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = HRWithFMDB/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = selfProject.HRWithFMDB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "fmdb/HRWithFMDB-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FFDDC154257CB0B700162835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = HRWithFMDB/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = selfProject.HRWithFMDB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "fmdb/HRWithFMDB-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFDDC139257CB0B300162835 /* Build configuration list for PBXProject "HRWithFMDB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDDC150257CB0B700162835 /* Debug */,
+				FFDDC151257CB0B700162835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFDDC152257CB0B700162835 /* Build configuration list for PBXNativeTarget "HRWithFMDB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDDC153257CB0B700162835 /* Debug */,
+				FFDDC154257CB0B700162835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFDDC136257CB0B300162835 /* Project object */;
+}
