@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 class DepartmentListVC: UITableViewController {
-    <#code#>
+
 }
