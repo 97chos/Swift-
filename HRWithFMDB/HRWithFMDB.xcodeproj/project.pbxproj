@@ -10,6 +10,7 @@
 		FF6F3FB1257D199100D96897 /* hr.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FF6F3FB0257D199100D96897 /* hr.sqlite */; };
 		FF6F3FB4257D1B0E00D96897 /* DepartmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F3FB3257D1B0E00D96897 /* DepartmentDAO.swift */; };
 		FF6F3FBA257D38B800D96897 /* EmployeeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F3FB9257D38B800D96897 /* EmployeeDAO.swift */; };
+		FF6F3FBE257DFFD500D96897 /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F3FBD257DFFD500D96897 /* PickerController.swift */; };
 		FFDDC142257CB0B300162835 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDC141257CB0B300162835 /* AppDelegate.swift */; };
 		FFDDC144257CB0B400162835 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDC143257CB0B400162835 /* SceneDelegate.swift */; };
 		FFDDC146257CB0B400162835 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDC145257CB0B400162835 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		FF6F3FB0257D199100D96897 /* hr.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = hr.sqlite; path = ../../../Database/hr.sqlite; sourceTree = "<group>"; };
 		FF6F3FB3257D1B0E00D96897 /* DepartmentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentDAO.swift; sourceTree = "<group>"; };
 		FF6F3FB9257D38B800D96897 /* EmployeeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDAO.swift; sourceTree = "<group>"; };
+		FF6F3FBD257DFFD500D96897 /* PickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
 		FFDDC13E257CB0B300162835 /* HRWithFMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRWithFMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDDC141257CB0B300162835 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFDDC143257CB0B400162835 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				FFDDC147257CB0B400162835 /* Main.storyboard */,
 				FFDDC16D257CB3A800162835 /* DepartmentListVC.swift */,
 				FFDDC170257CB3B300162835 /* EmployeeListVC.swift */,
+				FF6F3FBD257DFFD500D96897 /* PickerController.swift */,
 				FF6F3FB3257D1B0E00D96897 /* DepartmentDAO.swift */,
 				FF6F3FB9257D38B800D96897 /* EmployeeDAO.swift */,
 				FFDDC14A257CB0B600162835 /* Assets.xcassets */,
@@ -205,6 +208,7 @@
 			files = (
 				FF6F3FBA257D38B800D96897 /* EmployeeDAO.swift in Sources */,
 				FFDDC146257CB0B400162835 /* ViewController.swift in Sources */,
+				FF6F3FBE257DFFD500D96897 /* PickerController.swift in Sources */,
 				FFDDC16E257CB3A800162835 /* DepartmentListVC.swift in Sources */,
 				FF6F3FB4257D1B0E00D96897 /* DepartmentDAO.swift in Sources */,
 				FFDDC171257CB3B300162835 /* EmployeeListVC.swift in Sources */,
