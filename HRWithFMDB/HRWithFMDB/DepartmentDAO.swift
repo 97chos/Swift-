@@ -32,9 +32,11 @@ class DepartmentDAO {
 
     }()
 
+    // 앱 최초 실행 시 SQLite 연결
     init() {
         self.fmdb.open()
     }
+    // 메모리 해제 직전 SQLite 연결 해제
     deinit {
         self.fmdb.close()
     }
