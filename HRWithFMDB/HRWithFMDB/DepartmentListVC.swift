@@ -48,6 +48,7 @@ class DepartmentListVC: UITableViewController {
     override func viewDidLoad() {
         // 기존 저장된 부서 정보를 가져온다.
         self.departList = self.departDAO.find()
+        self.navigationItem.title = "부서 목록"
         self.initUI()
     }
 
@@ -86,6 +87,22 @@ class DepartmentListVC: UITableViewController {
         return cell
     }
 
+    // 셀 선택 시 호출 메소드
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        // 화면 이동 시 함께 전달할 부서 코드
+        let departCd = self.departList[indexPath.row].departCd
+
+        // 이동할 대상 뷰 컨트롤러 인스턴스
+        let infoVC = self.storyboard?.instantiateViewController(withIdentifier: "DEPART_INFO")
+
+        if let _infoVC = infoVC as? DepartmentInfoVC {
+            // 부서 코드를 전달한 다음, 푸시 방식으로 화면 이동
+            _infoVC.departCd = departCd
+            self.navigationController?.pushViewController(_infoVC, animated: true)
+        }
+    }
+
     // Edit 버튼 선택 시 편집, 삭제 모드 구현
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return UITableViewCell.EditingStyle.delete
@@ -101,5 +118,8 @@ class DepartmentListVC: UITableViewController {
             self.departList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+
+        let navTitle = self.navigationItem.titleView as? UILabel
+        navTitle?.text = "부서 목록 \n" + "총 \(self.departList.count)개"
     }
 }

@@ -53,7 +53,7 @@ class EmployeeListVC: UITableViewController {
 
                 // 4-2. 네비게이션 타이틀 갱신
                 if let navTitle = self.navigationItem.titleView as? UILabel {
-                    navTitle.text = "사원 목록 \n" + " 총 : \(self.empList.count)"
+                    navTitle.text = "사원 목록 \n" + "총 \(self.empList.count)명"
                 }
             }
         })
@@ -85,6 +85,9 @@ class EmployeeListVC: UITableViewController {
             empList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .left)
         }
+
+        let navTitle = self.navigationItem.titleView as? UILabel
+        navTitle?.text = "사원 목록 \n" + "총 \(self.empList.count)명"
     }
 
     override func viewDidLoad() {
@@ -92,13 +95,11 @@ class EmployeeListVC: UITableViewController {
         initUI()
     }
 
-    
-
     // UI 초기화 함수
     func initUI() {
         // 네비게이션 타이틀용 레이블 속성 설정
         let navTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
-        navTitle.text = "사원 목록 \n" + " 총 : \(self.empList.count)"
+        navTitle.text = "사원 목록 \n" + "총 \(self.empList.count)명"
         navTitle.font = .systemFont(ofSize: 14)
         navTitle.numberOfLines = 2
         navTitle.textAlignment = .center
@@ -115,7 +116,7 @@ class EmployeeListVC: UITableViewController {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "EMP_CELL") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "EMP_CELL")
 
-        cell.textLabel?.text = rowData.empName + "\(rowData.stateCd.desc())"
+        cell.textLabel?.text = rowData.empName + " (\(rowData.stateCd.desc()))"
         cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
 
         cell.detailTextLabel?.text = rowData.departTitle
