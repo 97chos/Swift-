@@ -13,6 +13,12 @@ class EmployeeListVC: UITableViewController {
     var empList : [EmployeeVO]!
     // SQLite 처리를 담당할 DAO 클래스
     var empDAO = EmployeeDAO()
+    // 새로고침 컨트롤에 들어갈 이미지 뷰
+    var loadingImg: UIImageView!
+    // 임계점에 도달했을 때 나타날 배경 뷰, 노란 원 형태
+    var bgCircle: UIView!
+    // 스크롤을 당기는 도중이 아닌 손가락을 뗴어 냈을 때 PTR이 동작하도록 하기 위한 변수
+    var refreshActive: Bool!
 
     @IBAction func add(_ sender: Any) {
 
@@ -93,6 +99,86 @@ class EmployeeListVC: UITableViewController {
     override func viewDidLoad() {
         empList = empDAO.find()
         initUI()
+
+        // MARK: - 당겨서 새로고침 기능 구현 (refreshControl & refreshControl 커스터마이징)
+
+        // 1. refreshControl 사용
+        // 테이블 뷰 컨트롤러의 refreshControl 속성에 UIRefreshControl() 객체 생성
+        // self.refreshControl = UIRefreshControl()
+        // refreshControl 동작 타이틀 설정
+        // self.refreshControl?.attributedTitle = NSAttributedString(string: "당겨서 새로고침")
+        // self.refreshControl?.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
+
+        // 2. 커스터마이징
+        // 테이블 뷰 컨트롤러의 refreshControl 속성에 UIRefreshControl() 객체 생성
+        self.refreshControl = UIRefreshControl()
+        // 로딩 이미지 초기화 & 중앙 정렬
+        self.loadingImg = UIImageView(image: UIImage(named: "refresh"))
+        self.loadingImg.center.x = (self.refreshControl?.frame.width)! / 2
+        // refreshControl 속성에 액션 메소드 추가
+        self.refreshControl?.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
+
+        // 기존 생성되어 있는 refreshControl 뷰의 인디케이터 tintColor를 투명하게 설정하여 안 보이게 설정
+        self.refreshControl?.tintColor = .clear
+        self.refreshControl?.addSubview(self.loadingImg)
+
+        // 1. 배경 뷰 초기화 및 노란 원 형태를 위한 속성 설정
+        self.bgCircle = UIView()
+        self.bgCircle.backgroundColor = .yellow
+        self.bgCircle.center.x = (self.refreshControl?.frame.width)! / 2
+
+        // 2. 배경 뷰를 refreshControll 객체에 추가하고, 로딩 이미지를 제일 위로 올림
+        self.refreshControl?.addSubview(bgCircle)
+        self.refreshControl?.bringSubviewToFront(self.loadingImg)
+    }
+
+    @objc func pullToRefresh(_ sender: Any) {
+        // 새로고침 시 갱신되어야 할 내용들
+        self.refreshActive = true
+
+        // 당겨서 새로고침 기능 종료
+        self.refreshControl?.endRefreshing()
+
+        // 노란 원이 로딩 이미지를 중심으로 커지는 애니메이션
+        let distance = max(0.0, -(self.refreshControl?.frame.origin.y)!)
+        UIView.animate(withDuration: 0.5) {
+            self.bgCircle.frame.size = CGSize(width: 80, height: 80)
+            self.bgCircle.center.y = distance / 2
+            self.bgCircle.center.x = (self.refreshControl?.frame.width)! / 2
+            self.bgCircle.layer.cornerRadius = (self.bgCircle.frame.size.width) / 2
+        }
+    }
+
+    // 스크롤이 발생할 때마다 구현될 내용을 작성
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // 당긴 거리 (max : 둘 중 큰 값을 반환)
+        let distance = max(0.0, -(self.refreshControl?.frame.origin.y)!)
+
+        print((self.refreshControl?.frame.origin.y)!)
+        print(self.tableView.bounds.origin.y)
+
+        // center.y 좌표를 당긴 거리만큼수정
+        self.loadingImg.center.y = distance / 2
+
+        // 당긴 거리를 회전 각도로 반환하여 로딩 이미지에 설정한다.
+        // CGAffineTransform : CGFloat 타입을 입력받아 회전 각도를 반환하는 메소드
+        let ts = CGAffineTransform(rotationAngle: CGFloat(distance / 20))
+        self.loadingImg.transform = ts
+
+        // 배경 뷰의 중심 좌표 설정
+        bgCircle.center.y = distance / 2
+    }
+
+    // 스크롤 종료 시 호출되는 메소드
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if refreshActive {
+            self.empList = self.empDAO.find()
+            self.tableView.reloadData()
+            self.refreshActive = false
+        }
+        // 노란 원 초기화
+        self.bgCircle.frame.size.width = 0
+        self.bgCircle.frame.size.height = 0
     }
 
     // UI 초기화 함수
