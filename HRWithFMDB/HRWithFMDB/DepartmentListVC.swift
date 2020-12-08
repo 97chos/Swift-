@@ -44,7 +44,6 @@ class DepartmentListVC: UITableViewController {
         self.present(alert, animated: true)
     }
 
-
     override func viewDidLoad() {
         // 기존 저장된 부서 정보를 가져온다.
         self.departList = self.departDAO.find()

@@ -13,12 +13,14 @@ class EmployeeListVC: UITableViewController {
     var empList : [EmployeeVO]!
     // SQLite 처리를 담당할 DAO 클래스
     var empDAO = EmployeeDAO()
-    // 새로고침 컨트롤에 들어갈 이미지 뷰
+    // 새로고침 컨트롤에 들어갈 이미지 뷰, 컨테이너 뷰, 텍스트 레이블
     var loadingImg: UIImageView!
+    var loadContainer: UIView!
+    var loadTitle: UILabel!
     // 임계점에 도달했을 때 나타날 배경 뷰, 노란 원 형태
     var bgCircle: UIView!
     // 스크롤을 당기는 도중이 아닌 손가락을 뗴어 냈을 때 PTR이 동작하도록 하기 위한 변수
-    var refreshActive: Bool!
+    var refreshActive = false
 
     @IBAction func add(_ sender: Any) {
 
@@ -112,30 +114,48 @@ class EmployeeListVC: UITableViewController {
         // 2. 커스터마이징
         // 테이블 뷰 컨트롤러의 refreshControl 속성에 UIRefreshControl() 객체 생성
         self.refreshControl = UIRefreshControl()
-        // 로딩 이미지 초기화 & 중앙 정렬
+        // 로딩뷰 초기화 & 중앙 정렬
+        self.loadContainer = UIView(frame: CGRect(x: 0, y: 0, width: (self.refreshControl?.frame.width)!,
+                                                  height: 110))
+
         self.loadingImg = UIImageView(image: UIImage(named: "refresh"))
-        self.loadingImg.center.x = (self.refreshControl?.frame.width)! / 2
+        self.loadingImg.center.x = (self.loadContainer?.frame.width)! / 2
+
+        self.loadTitle = UILabel()
+        self.loadTitle.text = "당겨서 새로고침"
+        self.loadTitle.font = .systemFont(ofSize: 14)
+        self.loadTitle.sizeToFit()
+        self.loadTitle.center.x = (self.loadContainer?.frame.width)! / 2
+        self.loadTitle.frame.origin.y = self.loadingImg.frame.height + 10
+        self.loadTitle.textAlignment = .center
+
+        self.loadContainer.addSubview(loadTitle)
+        self.loadContainer.addSubview(loadingImg)
+
         // refreshControl 속성에 액션 메소드 추가
         self.refreshControl?.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
 
         // 기존 생성되어 있는 refreshControl 뷰의 인디케이터 tintColor를 투명하게 설정하여 안 보이게 설정
         self.refreshControl?.tintColor = .clear
-        self.refreshControl?.addSubview(self.loadingImg)
+        self.refreshControl?.addSubview(self.loadContainer)
 
         // 1. 배경 뷰 초기화 및 노란 원 형태를 위한 속성 설정
         self.bgCircle = UIView()
-        self.bgCircle.backgroundColor = .yellow
+        self.bgCircle.backgroundColor = .systemYellow
         self.bgCircle.center.x = (self.refreshControl?.frame.width)! / 2
 
         // 2. 배경 뷰를 refreshControll 객체에 추가하고, 로딩 이미지를 제일 위로 올림
         self.refreshControl?.addSubview(bgCircle)
-        self.refreshControl?.bringSubviewToFront(self.loadingImg)
+        self.refreshControl?.bringSubviewToFront(self.loadContainer)
+
     }
 
+    // 새로고침 시 동작되는 내용
     @objc func pullToRefresh(_ sender: Any) {
-        // 새로고침 시 갱신되어야 할 내용들
         self.refreshActive = true
-
+        self.loadTitle.text = "손가락을 놓으면 업데이트가 시작됩니다."
+        self.loadTitle.sizeToFit()
+        self.loadTitle.center.x = self.loadContainer.frame.width / 2
         // 당겨서 새로고침 기능 종료
         self.refreshControl?.endRefreshing()
 
@@ -154,11 +174,11 @@ class EmployeeListVC: UITableViewController {
         // 당긴 거리 (max : 둘 중 큰 값을 반환)
         let distance = max(0.0, -(self.refreshControl?.frame.origin.y)!)
 
-        print((self.refreshControl?.frame.origin.y)!)
-        print(self.tableView.bounds.origin.y)
+        print("subview frame : \(Int((self.refreshControl?.frame.origin.y)!))")
+        print("superview bounds: \(Int(self.tableView.bounds.origin.y))")
 
         // center.y 좌표를 당긴 거리만큼수정
-        self.loadingImg.center.y = distance / 2
+        self.loadContainer.center.y = distance / 2
 
         // 당긴 거리를 회전 각도로 반환하여 로딩 이미지에 설정한다.
         // CGAffineTransform : CGFloat 타입을 입력받아 회전 각도를 반환하는 메소드
@@ -175,6 +195,8 @@ class EmployeeListVC: UITableViewController {
             self.empList = self.empDAO.find()
             self.tableView.reloadData()
             self.refreshActive = false
+            self.loadTitle.text = "당겨서 새로고침"
+            self.loadTitle.center.x = self.loadContainer.frame.width / 2
         }
         // 노란 원 초기화
         self.bgCircle.frame.size.width = 0
