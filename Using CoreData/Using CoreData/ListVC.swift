@@ -40,7 +40,7 @@ class ListVC: UITableViewController {
         // 2. 관리 객체 컨텍스트 참조
         let context = appDelegate.persistentContainer.viewContext
 
-        // 3. 참조한 관리 객체 인스턴스 생성 & 값을 설정
+        // 3. 참조한 관리 객체 컨텍스트에 관리 객체 인스턴스 생성 & 값 설정
         let object = NSEntityDescription.insertNewObject(forEntityName: "Board", into: context)
         object.setValue(title, forKey: "title")
         object.setValue(contents, forKey: "contents")
@@ -83,6 +83,26 @@ class ListVC: UITableViewController {
         self.present(alert, animated: true)
     }
 
+    // 데이터를 삭제할 메소드
+    func delete(object: NSManagedObject) -> Bool {
+        // 1. 앱 델리게이트 객체 참조
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        // 2. 관리 객체 컨텍스트 참조
+        let context = appDelegate.persistentContainer.viewContext
+
+        // 3. 컨텍스트로부터 해당 객체 삭제
+        context.delete(object)
+
+        // 4. 영구 저장소에 커밋
+        do {
+            try context.save()
+            return true
+        } catch {
+            context.rollback()
+            return false
+        }
+    }
+
     // 화면 및 로직 초기화 메소드
     override func viewDidLoad() {
         let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add(_:)))
@@ -90,6 +110,23 @@ class ListVC: UITableViewController {
 
         self.navigationItem.title = "게시판"
         self.tableView.tableFooterView = UIView()
+    }
+
+    // 편집 모드를 삭제로 지정
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+        // 삭제할 대상 객체
+        let object = self.list[indexPath.row]
+
+        if self.delete(object: object) {
+            // 코어 데이터에서 삭제되고 나면 배열목록과 테이블 뷰의 행도 삭제
+            self.list.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 
     // 테이블 뷰 데이터 소스용 프로토콜 메소드
