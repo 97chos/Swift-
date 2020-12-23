@@ -97,12 +97,6 @@ class ListViewController: UITableViewController {
         // 기본 저장소 객체 불러오기
         let plist = UserDefaults.standard
 
-        // 불러온 값을 설정
-        self.account.text = plist.string(forKey: "account")
-        self.name.text = plist.string(forKey: "name")
-        self.gender.selectedSegmentIndex = plist.integer(forKey: "gender")
-        self.married.isOn = plist.bool(forKey: "married")
-
         // plist에 저장된 계정 목록을 현재 내부 변수에 대입하여 동기화
         let PlistAccountList = plist.array(forKey: "accountList") as? [String] ?? [String]()
         self.accountList = PlistAccountList
