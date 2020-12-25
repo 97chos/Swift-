@@ -1,0 +1,6 @@
+framework module Pods_HRwithFMDB_programmically_ {
+  umbrella header "Pods-HRwithFMDB(programmically)-umbrella.h"
+
+  export *
+  module * { export * }
+}
