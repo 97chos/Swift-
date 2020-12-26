@@ -24,6 +24,7 @@
 		FF6CDB7025962D1900B7F556 /* DepartmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6CDB6F25962D1900B7F556 /* DepartmentDAO.swift */; };
 		FF6CDB76259669BE00B7F556 /* EmployeeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6CDB75259669BE00B7F556 /* EmployeeDAO.swift */; };
 		FF6CDB7A25972F8300B7F556 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6CDB7925972F8300B7F556 /* PickerViewController.swift */; };
+		FF6CDB7D259779FC00B7F556 /* DepartmentInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6CDB7C259779FC00B7F556 /* DepartmentInfoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		FF6CDB6F25962D1900B7F556 /* DepartmentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentDAO.swift; sourceTree = "<group>"; };
 		FF6CDB75259669BE00B7F556 /* EmployeeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDAO.swift; sourceTree = "<group>"; };
 		FF6CDB7925972F8300B7F556 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		FF6CDB7C259779FC00B7F556 /* DepartmentInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentInfoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				FF6CDB652595B71600B7F556 /* EmployeeListVC.swift */,
 				FF6CDB7925972F8300B7F556 /* PickerViewController.swift */,
 				FF6CDB75259669BE00B7F556 /* EmployeeDAO.swift */,
+				FF6CDB7C259779FC00B7F556 /* DepartmentInfoVC.swift */,
 				FF6CDB422595B5DE00B7F556 /* Main.storyboard */,
 				FF6CDB452595B5E000B7F556 /* Assets.xcassets */,
 				FF6CDB472595B5E000B7F556 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF6CDB602595B5F900B7F556 /* FMResultSet.m in Sources */,
+				FF6CDB7D259779FC00B7F556 /* DepartmentInfoVC.swift in Sources */,
 				FF6CDB76259669BE00B7F556 /* EmployeeDAO.swift in Sources */,
 				FF6CDB5F2595B5F900B7F556 /* FMDatabaseQueue.m in Sources */,
 				FF6CDB7025962D1900B7F556 /* DepartmentDAO.swift in Sources */,

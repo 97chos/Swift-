@@ -63,17 +63,21 @@ class EmployeeDAO {
         self.fmdb.close()
     }
 
-
     // 사원 목록 가져오는 메소드
-    func find() -> [EmployeeVO] {
+    func find(departCd: Int = 0) -> [EmployeeVO] {
         // 반환할 데이터를 담을 [EmployeeVO] 타입 객체 정의
         var employeeList = [EmployeeVO]()
 
         do {
+
+            // 1. 조건절 정의 (매개변수가 입력되지 않을 경우 0이 입력)
+            let condition = departCd == 0 ? "" : "WHERE Employee.depart_cd = \(departCd)"
+
             let sql = """
             SELECT emp_cd, emp_name, join_date, state_cd, department.depart_title
             FROM employee
             JOIN department ON department.depart_cd = employee.depart_cd
+            \(condition)
             ORDER BY employee.depart_cd ASC
             """
 
@@ -160,6 +164,26 @@ class EmployeeDAO {
             return true
         } catch let error as NSError {
             print("Delete Error : \(error.localizedDescription)")
+            return false
+        }
+    }
+
+    // 재직 상태 변경 메소드
+    func editState(empCd: Int, stateCd: EmpStateType) -> Bool {
+
+        do {
+            let sql = "UPDATE Employee SET state_cd = ? WHERE emp_cd = ?"
+
+            // 인자값 배열
+            var params = [Any]()
+            params.append(stateCd.rawValue)
+            params.append(empCd)
+
+            // 업데이트 실행
+            try self.fmdb.executeUpdate(sql, values: params)
+            return true
+        } catch let error as NSError {
+            print("Update error : \(error.localizedDescription)")
             return false
         }
     }

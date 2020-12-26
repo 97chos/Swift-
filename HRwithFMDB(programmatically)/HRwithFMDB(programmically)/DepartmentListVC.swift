@@ -93,6 +93,12 @@ class DepartmentListVC: UITableViewController {
         }
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = DepartmentInfoVC()
+        detailVC.departCd = self.departList[indexPath.row].departCd
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+
     // 신규 버튼 추가 메소드
     @objc func add(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "신규 부서 등록",message: "신규 부서를 등록해주세요.", preferredStyle: .alert)
