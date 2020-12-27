@@ -56,6 +56,32 @@ class ListVC: UITableViewController {
         }
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        // 1. 선택된 행에 해당하는 데이터 가져오기
+        let object = self.list[indexPath.row]
+        let title = object.value(forKey: "title") as? String
+        let contents = object.value(forKey: "contents") as? String
+
+        let alert = UIAlertController(title: "게시글 수정", message: nil, preferredStyle: .alert)
+
+        // 2. 입력 필드 추가 (기존 값 입력)
+        alert.addTextField() { $0.text = title }
+        alert.addTextField() { $0.text = contents }
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Save", style: .default) { _ in
+            guard let title = alert.textFields?.first?.text, let contents = alert.textFields?.last?.text else {
+                return
+            }
+
+            if self.edit(object: object, title: title, contents: contents) {
+                self.tableView.reloadData()
+            }
+        })
+        present(alert, animated: true)
+    }
+
 }
 
 extension ListVC {
@@ -114,6 +140,30 @@ extension ListVC {
 
         // 3. 컨텍스트로부터 해당 객체 상제
         context.delete(object)
+
+        // 4. 영구 저장소에 커밋
+        do {
+            try context.save()
+            return true
+        } catch {
+            context.rollback()
+            return false
+        }
+    }
+
+    // 데이터 수정 메소드
+    func edit(object: NSManagedObject, title: String, contents: String) -> Bool {
+
+        // 1. 앱 델리게이트 참조
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
+        // 2. 컨텍스트 참조
+        let context = appDelegate.persistentContainer.viewContext
+
+        // 3. 관리 객체의 값을 수정
+        object.setValue(title, forKey: "title")
+        object.setValue(contents, forKey: "contents")
+        object.setValue(Date(), forKey: "regDate")
 
         // 4. 영구 저장소에 커밋
         do {
