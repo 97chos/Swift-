@@ -42,6 +42,20 @@ class ListVC: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+        let object = self.list[indexPath.row]
+
+        if self.delete(object: object) {
+            self.list.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+
 }
 
 extension ListVC {
@@ -83,6 +97,27 @@ extension ListVC {
         do {
             try context.save()
             self.list.append(object)
+            return true
+        } catch {
+            context.rollback()
+            return false
+        }
+    }
+
+    // 데이터 삭제 메소드
+    func delete(object: NSManagedObject) -> Bool {
+        // 1. 앱 델리게이트 참조
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
+        // 2. 컨텍스트 참조
+        let context = appDelegate.persistentContainer.viewContext
+
+        // 3. 컨텍스트로부터 해당 객체 상제
+        context.delete(object)
+
+        // 4. 영구 저장소에 커밋
+        do {
+            try context.save()
             return true
         } catch {
             context.rollback()
