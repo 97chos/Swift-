@@ -15,11 +15,22 @@ class EmployeeListVC: UITableViewController {
     // SQLite 처리를 담당할 DAO 클래스
     var empDAO = EmployeeDAO()
     var subtitle: UILabel!
-
+    var loadImage: UIImageView!
 
     override func viewDidLoad() {
         self.empList = empDAO.find()
         initUI()
+
+        // PTR 기능
+        self.refreshControl = UIRefreshControl()
+        // self.refreshControl?.attributedTitle = NSAttributedString(string: "당겨서 새로고침")
+        self.loadImage = UIImageView(image: UIImage(named: "refresh"))
+        self.loadImage.center.x = (self.refreshControl?.frame.width)! / 2
+        print((self.refreshControl?.frame.width)!)
+
+        self.refreshControl?.tintColor = .clear
+        self.refreshControl?.addSubview(loadImage)
+        self.refreshControl?.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
     }
 
     func initUI() {
@@ -129,6 +140,25 @@ class EmployeeListVC: UITableViewController {
         })
 
         self.present(alert, animated: true)
+    }
+
+    @objc func pullToRefresh(_ sender: Any) {
+        self.empList = self.empDAO.find()
+        self.tableView.reloadData()
+
+        self.refreshControl?.endRefreshing()
+    }
+
+    // 스크롤 할 때마다 호출되는 메소드
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // 당긴 거리
+        let distance = max(0, -(self.refreshControl?.frame.origin.y)!)
+
+        self.loadImage.center.y = distance / 2
+
+        // 당긴 거리만큼 회전 각도로 반환하여 로딩 이미지에 설정
+        let ts = CGAffineTransform(rotationAngle: CGFloat(distance / 20))
+        self.loadImage.transform = ts
     }
 }
 
