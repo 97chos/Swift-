@@ -76,7 +76,16 @@ class ListVC: UITableViewController {
             }
 
             if self.edit(object: object, title: title, contents: contents) {
-                self.tableView.reloadData()
+                // self.tableView.reloadData()
+
+                // 보여지는 셀 내용 직접 수정
+                let cell = self.tableView.cellForRow(at: indexPath)
+                cell?.textLabel?.text = title
+                cell?.detailTextLabel?.text = contents
+
+                // 수정한 셀 위치 이동 (애니메이션 효과)
+                let firstIndexPath = IndexPath(item: 0, section: 0)
+                self.tableView.moveRow(at: indexPath, to: firstIndexPath)
             }
         })
         present(alert, animated: true)
@@ -97,6 +106,9 @@ extension ListVC {
 
         // 3. 요청 객체 참조
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Board")
+        let sort = NSSortDescriptor(key: "regDate", ascending: false)
+
+        fetchRequest.sortDescriptors = [sort]
 
         // 4. 데이터 가져오기
         let result = try! context.fetch(fetchRequest)
@@ -122,7 +134,8 @@ extension ListVC {
         // 4, 영구 저장소에 커밋되고 나면 list 프로퍼티에 추가
         do {
             try context.save()
-            self.list.append(object)
+            // self.list.append(object)
+            self.list.insert(object, at: 0)
             return true
         } catch {
             context.rollback()
@@ -168,6 +181,7 @@ extension ListVC {
         // 4. 영구 저장소에 커밋
         do {
             try context.save()
+            self.list = self.fetch()
             return true
         } catch {
             context.rollback()
