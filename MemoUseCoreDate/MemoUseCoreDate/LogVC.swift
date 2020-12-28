@@ -33,7 +33,7 @@ class LogVC: UITableViewController {
     var list: [LogMO]!
 
     override func viewDidLoad() {
-        self.list = self.board.logs?.array as! [LogMO]
+        self.list = self.board.logs?.array as? [LogMO]
         self.navigationItem.title = self.board.title
         self.tableView.tableFooterView = UIView()
     }
