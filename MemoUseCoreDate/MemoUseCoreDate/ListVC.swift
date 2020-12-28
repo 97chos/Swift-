@@ -19,6 +19,7 @@ class ListVC: UITableViewController {
     override func viewDidLoad() {
         self.view.backgroundColor = .white
         self.navigationItem.title = "메모"
+        self.tableView.tableFooterView = UIView()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add(_:)))
     }
 
@@ -35,6 +36,7 @@ class ListVC: UITableViewController {
 
         // 셀 생성 및 값 대입
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        cell.accessoryType = .detailButton
 
         cell.textLabel?.text = title
         cell.detailTextLabel?.text = contents
@@ -91,6 +93,14 @@ class ListVC: UITableViewController {
         present(alert, animated: true)
     }
 
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        let object = self.list[indexPath.row]
+        let logVC = LogVC()
+
+        logVC.board = object as? BoardMO
+
+        self.show(logVC, sender: self)
+    }
 }
 
 extension ListVC {
@@ -130,6 +140,15 @@ extension ListVC {
         object.setValue(title, forKey: "title")
         object.setValue(contents, forKey: "contents")
         object.setValue(Date(), forKey: "regDate")
+
+        // 3-1. Log 관리 객체 생성 및 어트리뷰트에 값 대입
+        let logObject = NSEntityDescription.insertNewObject(forEntityName: "Log", into: context) as! LogMO
+
+        logObject.regDate = Date()
+        logObject.type = LogType.create.rawValue
+        
+        // 3-2. 게시글 객체의 logs 속성에 새로 생성된 로그 객체 추가
+        (object as! BoardMO).addToLogs(logObject)
 
         // 4, 영구 저장소에 커밋되고 나면 list 프로퍼티에 추가
         do {
@@ -177,6 +196,16 @@ extension ListVC {
         object.setValue(title, forKey: "title")
         object.setValue(contents, forKey: "contents")
         object.setValue(Date(), forKey: "regDate")
+
+        // 3-1. Log 관리 객체 생성 및 어트리뷰트에 값 대입
+        let logObject = NSEntityDescription.insertNewObject(forEntityName: "Log", into: context) as! LogMO
+
+        logObject.regDate = Date()
+        logObject.type = LogType.edit.rawValue
+
+        // 3-2. 게시글 객체의 logs 속성에 새로 생성된 로그 객체 추가
+        (object as! BoardMO).addToLogs(logObject)
+
 
         // 4. 영구 저장소에 커밋
         do {

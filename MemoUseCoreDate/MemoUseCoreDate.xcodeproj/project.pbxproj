@@ -15,6 +15,7 @@
 		FF6CDB982598BB2B00B7F556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF6CDB972598BB2B00B7F556 /* Assets.xcassets */; };
 		FF6CDB9B2598BB2B00B7F556 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6CDB992598BB2B00B7F556 /* LaunchScreen.storyboard */; };
 		FF6CDBA42598BC9E00B7F556 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6CDBA32598BC9E00B7F556 /* ListVC.swift */; };
+		FF6CDBA72598DCCA00B7F556 /* LogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6CDBA62598DCCA00B7F556 /* LogVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FF6CDB9A2598BB2B00B7F556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF6CDB9C2598BB2B00B7F556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF6CDBA32598BC9E00B7F556 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
+		FF6CDBA62598DCCA00B7F556 /* LogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				FF6CDB8B2598BB2800B7F556 /* AppDelegate.swift */,
 				FF6CDB8D2598BB2800B7F556 /* SceneDelegate.swift */,
 				FF6CDBA32598BC9E00B7F556 /* ListVC.swift */,
+				FF6CDBA62598DCCA00B7F556 /* LogVC.swift */,
 				FF6CDB8F2598BB2800B7F556 /* ViewController.swift */,
 				FF6CDB912598BB2800B7F556 /* Main.storyboard */,
 				FF6CDB972598BB2B00B7F556 /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF6CDB902598BB2800B7F556 /* ViewController.swift in Sources */,
+				FF6CDBA72598DCCA00B7F556 /* LogVC.swift in Sources */,
 				FF6CDBA42598BC9E00B7F556 /* ListVC.swift in Sources */,
 				FF6CDB8C2598BB2800B7F556 /* AppDelegate.swift in Sources */,
 				FF6CDB962598BB2800B7F556 /* MemoUseCoreDate.xcdatamodeld in Sources */,
