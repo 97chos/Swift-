@@ -1,2 +1,2 @@
 # Swift_Basic
-기초다지기
+Swift 기본 활용 공부
